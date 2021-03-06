@@ -51,6 +51,11 @@ func totalPayment(prices ...int) int {
 	return subtotal
 }
 
+// save function as variable
+func coba(wording string) string {
+	return wording
+}
+
 func main() {
 	// simple function
 	hello()
@@ -83,4 +88,17 @@ func main() {
 	// variadic function
 	subTotal := totalPayment(25000, 1500, 10000) //price, tax, shipping
 	fmt.Println("Jumlah yang harus anda bayar Rp", subTotal)
+	breakRule()
+
+	// variadic function return value as a slice
+	var subTotal2 int
+	checkout := []int{25000, 1500, 10000, 1000} //price, tax, shipping, ppn
+	subTotal2 = totalPayment(checkout...)       // must in varargs mode
+	fmt.Println("Jumlah yang harus anda bayar Rp", subTotal2)
+	breakRule()
+
+	// save function as variable
+	var _coba = coba
+	fmt.Println(_coba("hello from variable"))
+	breakRule()
 }
