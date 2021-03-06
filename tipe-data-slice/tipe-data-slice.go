@@ -3,13 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	var nilai_array = [...]string{
+
+	var slice = make([]string, 2, 5)
+	slice[0] = "Hello"
+	slice[1] = "world"
+
+	fmt.Println(slice)
+
+	//--------------------------------------//
+	var nilaiArray = [...]string{
 		"satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan",
 	}
 
-	var nilai_slice_1 = nilai_array[3:5]
+	var nilaiSlice1 = nilaiArray[2:6]
 
-	fmt.Println("nilai_slice_1")
+	fmt.Println(nilaiSlice1)
 }
 
 /*
